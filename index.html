@@ -47,19 +47,15 @@
         margin-top: 10px; /* Space above the moon */
         margin-bottom: 50px; /* Space below the moon */
         filter: none;
+        overflow: hidden;
       }
-
-      .moon-container img {
-        border-radius: 50%;
-        transition: filter 1s ease-in-out;
-      }
-
+      
       .hover-text {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: rgb(236, 210, 183);
+        color: rgb(245, 228, 211);
         font-size: 1.5rem;
         text-align: center;
         opacity: 0; /* Hidden by default */
@@ -67,10 +63,39 @@
         transition: opacity 0.3s ease-out;
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
       }
-
-      .moon-container:hover img {
-        filter: brightness(75%);
+      
+      .moon-image{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
       }
+
+      .moon-container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%; /* Start the gradient from the middle */
+        width: 50%; /* Only cover the right half */
+        height: 100%;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+        opacity: 0; /* Start with no darkening */
+        transition: opacity 0.3s ease-in-out;
+        pointer-events: none; /* Ensures it doesn’t block the hover event */
+      }
+
+      .moon-container:hover::after {
+        opacity: 1; /* Fully darkens the right side on hover */
+      }
+
+      .moon-container img {
+        border-radius: 50%;
+        transition: filter 1s ease-in-out;
+      }
+
+      /* .moon-container:hover img {
+        filter: brightness(70%);
+      } */
 
       .moon-container:hover .hover-text {
         opacity: 0.9; /* Show text on hover */
@@ -121,6 +146,7 @@
       <img
         src="/assets/images/moon.jpg"
         alt="My picture of a nearly full waning gibbous moon"
+        class="moon-image"
       />
       <div class="hover-text">can you feel the light, inside?</div>
     </div>
