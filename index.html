@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Welcome to My Portfolio - Explore my projects, photography, and creative work in a clean, modern layout with stunning visuals to showcase my passion and expertise."
+    />
+    <title>Portfolio Home</title>
+    <style>
+      body {
+        background-color: black;
+        color: rgb(240, 224, 207);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh; /* Ensures the body takes full viewport height */
+        margin: 0;
+        gap: 20px;
+      }
+
+      header {
+        margin-bottom: 30px; /* Adds spacing below the header */
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        text-align: center;
+      }
+
+      img {
+        width: 300px; /* Adjust as needed */
+        filter: none;
+      }
+
+      /* Styling the moon container */
+      .moon-container {
+        height: 300px;
+        width: 300px;
+        position: relative;
+        display: inline-block;
+        border-radius: 50%;
+        margin-top: 10px; /* Space above the moon */
+        margin-bottom: 50px; /* Space below the moon */
+        filter: none;
+      }
+
+      .moon-container img {
+        border-radius: 50%;
+        transition: filter 1s ease-in-out;
+      }
+
+      .hover-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgb(236, 210, 183);
+        font-size: 1.5rem;
+        text-align: center;
+        opacity: 0; /* Hidden by default */
+        transition: opacity 1s ease-in;
+        transition: opacity 0.3s ease-out;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+      }
+
+      .moon-container:hover img {
+        filter: brightness(75%);
+      }
+
+      .moon-container:hover .hover-text {
+        opacity: 0.9; /* Show text on hover */
+      }
+
+      /* Centering container for the line and list */
+      .list-container {
+        display: flex;
+        align-items: center; /* Aligns items vertically */
+        justify-content: center; /* Centers the container horizontally */
+      }
+
+      /* Styling for the vertical line */
+      .vertical-line {
+        width: 2px;
+        height: 150px; /* Adjust this to match the height of the list */
+        background-color: rgb(235, 218, 201);
+        margin-right: 15px; /* Space between the line and list */
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        font-size: 1.5rem;
+        margin: 10px 0;
+      }
+
+      nav a {
+        color: rgb(243, 231, 215);
+        text-decoration: none;
+        font-size: 1.2rem;
+      }
+
+      nav a:hover {
+        color: #dbb877;
+        transition: 0.1s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>welcome</h1>
+    </header>
+    <div class="moon-container">
+      <img
+        src="/assets/images/moon.jpg"
+        alt="My picture of a nearly full waning gibbous moon"
+      />
+      <div class="hover-text">can you feel the light, inside?</div>
+    </div>
+    <nav>
+      <div class="list-container">
+        <div class="vertical-line"></div>
+        <ul>
+          <li><a href="me/about.html">about</a></li>
+          <li><a href="https://github.com/rexoatwit">projects</a></li>
+          <li><a href="my-work/photography.html">photography</a></li>
+          <li><a href="me/contact.html">contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </body>
+</html>
