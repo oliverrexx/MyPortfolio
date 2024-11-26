@@ -1,0 +1,16 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore editor config files
+.vscode/
+
+# Ignore build output
+/dist/
+/build/
+
+# Ignore logs
+*.log
+
+# Ignore sensitive files
+.env
